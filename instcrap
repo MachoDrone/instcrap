@@ -1,5 +1,5 @@
 #!/bin/sh
-# start with:  
+# start with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/instcrap/main/instcrap | sudo bash
 
 
 
