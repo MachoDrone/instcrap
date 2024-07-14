@@ -1,0 +1,101 @@
+#!/bin/sh
+# start with:  
+
+
+
+clear
+echo .
+lsb_release -a
+echo .
+echo Should be Ubuntu 22.04 or higher
+echo .
+sleep 5
+sudo apt update -y
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+
+sudo rm /usr/share/keyrings/docker-archive-keyring.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update -y
+
+apt-cache policy docker-ce
+
+sudo apt install docker-ce -y
+
+sudo systemctl status docker > statusdocker.tmp
+cat statusdocker.tmp
+rm statusdocker.tmp
+
+
+# ****verify $SUDO_USER function************
+sudo usermod -aG docker $USER
+
+
+# ******** work in script?? *********
+#sudo su - $USER
+
+# ******************************************
+
+groups
+
+sudo usermod -aG docker $USER
+# ****************************************** END OF $SUDO_USER??
+
+docker
+docker info
+docker images
+
+
+sudo lshw -c display
+sudo lshw -c video
+sudo ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+# sudo apt install nvidia-driver-version-number
+
+# Run this shutdown reboot and continue at the next comment
+MARKER_FILE="/tmp/reboot_marker"
+
+if [ ! -f "$MARKER_FILE" ]; then
+    echo "hello world"
+
+    # Create the marker file to indicate the script has run up to the reboot
+    touch "$MARKER_FILE"
+
+sudo shutdown -r now
+
+else
+    # Post-reboot section
+    echo "hello again"
+
+    # Clean up the marker file to reset the script state
+    rm -f "$MARKER_FILE"
+fi
+
+# Continue the script here after reboot
+
+sudo lshw -c display
+prime-select query
+# sudo prime-select intel
+sudo prime-select nvidia
+
+
+sudo rm /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
+  && \
+    sudo apt-get update
+
+sudo apt-get install -y nvidia-container-toolkit
+
+sudo nvidia-ctk runtime configure --runtime=docker
+
+sudo systemctl restart docker
+
+echo SCRIPT COMPLETE
+bash <(wget -qO- https://nosana.io/register.sh)
+
