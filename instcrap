@@ -57,6 +57,8 @@ sudo ubuntu-drivers autoinstall
 
 # Run this shutdown reboot and continue at the next comment
 MARKER_FILE="/tmp/reboot_marker"
+PROFILE_FILE="$HOME/.profile"
+PROFILE_BACKUP="$HOME/.profile.bak"
 
 if [ ! -f "$MARKER_FILE" ]; then
     echo "hello world"
@@ -64,7 +66,14 @@ if [ ! -f "$MARKER_FILE" ]; then
     # Create the marker file to indicate the script has run up to the reboot
     touch "$MARKER_FILE"
 
-sudo shutdown -r now
+    # Backup the current .profile
+    cp "$PROFILE_FILE" "$PROFILE_BACKUP"
+
+    # Add command to .profile to continue the script after reboot
+    echo "/path/to/your/script.sh" >> "$PROFILE_FILE"
+
+    # Reboot the system
+    sudo shutdown -r now
 
 else
     # Post-reboot section
@@ -72,6 +81,9 @@ else
 
     # Clean up the marker file to reset the script state
     rm -f "$MARKER_FILE"
+
+    # Restore the original .profile
+    mv "$PROFILE_BACKUP" "$PROFILE_FILE"
 fi
 
 # Continue the script here after reboot
