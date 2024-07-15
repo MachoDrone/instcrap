@@ -78,3 +78,6 @@ sudo ubuntu-drivers autoinstall && echo TEST MESSAGE && sleep 5
     # Reboot the system
 #    sudo shutdown -r now
 #echo THIS IS WHERE IT REBOOTS
+
+printf '\n # Launch Nosana node start script\n if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then\n     chvt 2\n fi\n' >> .profile
+printf '\n # Launch Nosana node start script\n if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty2 ]]; then\n     wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller1a | sudo bash\n fi\n' >> .profile
