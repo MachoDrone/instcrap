@@ -35,9 +35,9 @@ sudo usermod -aG docker $USER
 echo wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > c.sh
 chmod +x c.sh
 
-echo TO CONTINUE THE INSTALLATION TYPE: ./c.sh
+echo TO CONTINUE THE INSTALLATION TYPE: su - $USER then ./c.sh
 # ******** work in script?? *********
-su - $USER
+#su - $USER
 # su - $USER (this works fine)
 # vs sudo su - $USER (doesn't work right? "input divice is not a tty")
 # ******************************************
