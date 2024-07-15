@@ -34,7 +34,7 @@ sudo usermod -aG docker $USER
 
 
 # ******** work in script?? *********
-# su - $USER
+# su - $USER (this works fine)
 # vs sudo su - $USER (doesn't work right? "input divice is not a tty")
 # ******************************************
 
