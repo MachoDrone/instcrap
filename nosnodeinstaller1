@@ -66,7 +66,7 @@ sudo apt install lshw -y
 sudo lshw -c display
 # sudo lshw -c video
 sudo ubuntu-drivers devices
-sudo ubuntu-drivers autoinstall
+sudo ubuntu-drivers autoinstall && echo TEST MESSAGE && sleep 5
 # sudo apt install nvidia-driver-version-number
 
 # Run this shutdown reboot and continue at the next comment
@@ -76,4 +76,4 @@ sudo ubuntu-drivers autoinstall
 # sleep 10
     # Reboot the system
 #    sudo shutdown -r now
-echo THIS IS WHERE IT REBOOTS
+#echo THIS IS WHERE IT REBOOTS
