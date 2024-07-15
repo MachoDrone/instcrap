@@ -26,4 +26,4 @@ sudo systemctl restart docker
 
 echo SCRIPT COMPLETE
 echo END OF SCRIPT
-echo bash <(wget -qO- https://nosana.io/register.sh)
+echo "bash <(wget -qO- https://nosana.io/register.sh)"
