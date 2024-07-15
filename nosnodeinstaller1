@@ -34,8 +34,16 @@ sudo usermod -aG docker $USER
 
 echo wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
 chmod +x go.sh
-
-echo TO CONTINUE THE INSTALLATION TYPE: su - $USER then ./go.sh
+echo .
+echo .
+echo .
+echo .
+echo "TO CONTINUE THE INSTALLATION TYPE: su - $USER"
+echo "THEN TYPE:  ./go.sh"
+echo .
+echo .
+echo .
+echo .
 # ******** work in script?? *********
 #su - $USER
 # su - $USER (this works fine)
