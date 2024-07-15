@@ -39,7 +39,7 @@ echo .
 echo .
 echo .
 echo "TO CONTINUE THE INSTALLATION TYPE: su - yourusername"
-echo "e.g.: su - james
+echo "e.g.: su - james"
 echo "THEN TYPE:  ./go.sh"
 echo .
 echo .
