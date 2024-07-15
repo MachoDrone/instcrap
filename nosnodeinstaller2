@@ -25,4 +25,5 @@ sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 
 echo SCRIPT COMPLETE
+echo END OF SCRIPT
 bash <(wget -qO- https://nosana.io/register.sh)
