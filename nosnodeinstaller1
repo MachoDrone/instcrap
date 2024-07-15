@@ -32,10 +32,10 @@ rm statusdocker.tmp
 # ****verify $SUDO_USER function************
 sudo usermod -aG docker $USER
 
-echo wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > c.sh
-chmod +x c.sh
+echo wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
+chmod +x go.sh
 
-echo TO CONTINUE THE INSTALLATION TYPE: su - $USER then ./c.sh
+echo TO CONTINUE THE INSTALLATION TYPE: su - $USER then ./go.sh
 # ******** work in script?? *********
 #su - $USER
 # su - $USER (this works fine)
