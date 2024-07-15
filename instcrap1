@@ -72,42 +72,11 @@ if [ ! -f "$MARKER_FILE" ]; then
     # Add command to .profile to continue the script after reboot
     echo "/path/to/your/script.sh" >> "$PROFILE_FILE"
 
+echo -------------------------------
+echo rebooting system in 10 seconds
+echo -------------------------------
+sleep 10
+
     # Reboot the system
     sudo shutdown -r now
-
-else
-    # Post-reboot section
-    echo "hello again"
-
-    # Clean up the marker file to reset the script state
-    rm -f "$MARKER_FILE"
-
-    # Restore the original .profile
-    mv "$PROFILE_BACKUP" "$PROFILE_FILE"
-fi
-
-# Continue the script here after reboot
-
-sudo lshw -c display
-prime-select query
-# sudo prime-select intel
-sudo prime-select nvidia
-
-
-sudo rm /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
-curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
-    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
-  && \
-    sudo apt-get update
-
-sudo apt-get install -y nvidia-container-toolkit
-
-sudo nvidia-ctk runtime configure --runtime=docker
-
-sudo systemctl restart docker
-
-echo SCRIPT COMPLETE
-bash <(wget -qO- https://nosana.io/register.sh)
 
