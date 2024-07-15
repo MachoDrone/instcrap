@@ -53,11 +53,10 @@ sudo ubuntu-drivers autoinstall
 # sudo apt install nvidia-driver-version-number
 
 # Run this shutdown reboot and continue at the next comment
-echo -------------------------------
-echo rebooting system in 10 seconds
-echo -------------------------------
-sleep 10
-
+# echo -------------------------------
+# echo rebooting system in 10 seconds
+# echo -------------------------------
+# sleep 10
     # Reboot the system
 #    sudo shutdown -r now
-echo THIS IS WHERE IT REBOOTS
+# echo THIS IS WHERE IT REBOOTS
