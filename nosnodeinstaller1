@@ -41,9 +41,9 @@ groups
 sudo usermod -aG docker $USER
 # ****************************************** END OF $SUDO_USER??
 
-docker
-docker info
-docker images
+#docker
+#docker info
+#docker images
 
 sudo apt install lshw -y
 sudo lshw -c display
