@@ -38,9 +38,9 @@ sudo usermod -aG docker $USER
 # vs sudo su - $USER (doesn't work right? "input divice is not a tty")
 # ******************************************
 
-groups
+sudo -u $USER groups
 
-sudo usermod -aG docker $USER
+sudo -u $USER sudo usermod -aG docker $USER
 # ****************************************** END OF $SUDO_USER??
 
 #docker
