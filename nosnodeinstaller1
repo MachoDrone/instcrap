@@ -2,7 +2,6 @@
 # start with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/instcrap/main/instcrap | sudo bash
 
 
-
 clear
 echo .
 lsb_release -a
