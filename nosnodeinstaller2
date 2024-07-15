@@ -1,4 +1,6 @@
+#!/bin/sh
 
+#run with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/test-7-10-24/main/test.sh | sudo bash
 
 # Continue the script here after reboot
 
