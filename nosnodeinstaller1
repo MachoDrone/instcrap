@@ -75,5 +75,5 @@ echo -------------------------------
 sleep 10
 
     # Reboot the system
-    sudo shutdown -r now
-
+#    sudo shutdown -r now
+echo THIS IS WHERE IT REBOOTS
