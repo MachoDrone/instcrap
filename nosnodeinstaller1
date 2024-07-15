@@ -32,7 +32,7 @@ rm statusdocker.tmp
 # ****verify $SUDO_USER function************
 sudo usermod -aG docker $USER
 
-echo wget https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2 > c.sh
+echo wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > c.sh
 chmod +x c.sh
 
 echo TO CONTINUE THE INSTALLATION TYPE: ./c.sh
