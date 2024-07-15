@@ -49,6 +49,7 @@ sudo apt install lshw -y
 sudo lshw -c display
 sudo lshw -c video
 sudo ubuntu-drivers devices
+sleep 5
 sudo ubuntu-drivers autoinstall
 # sudo apt install nvidia-driver-version-number
 
