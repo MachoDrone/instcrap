@@ -76,4 +76,4 @@ sudo ubuntu-drivers autoinstall
 # sleep 10
     # Reboot the system
 #    sudo shutdown -r now
-# echo THIS IS WHERE IT REBOOTS
+echo THIS IS WHERE IT REBOOTS
