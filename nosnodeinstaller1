@@ -32,7 +32,7 @@ sudo usermod -aG docker $USER
 
 
 # ******** work in script?? *********
-#sudo su - $USER
+sudo su - $USER
 
 # ******************************************
 
