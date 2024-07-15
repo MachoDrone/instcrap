@@ -6,9 +6,9 @@ clear
 echo .
 lsb_release -a
 echo .
-echo Should be Ubuntu 22.04 or higher
+echo Please ovserve if you are using Ubuntu 22.04 or higher
 echo .
-sleep 5
+sleep 1
 sudo apt update -y
 
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
@@ -47,9 +47,8 @@ sudo usermod -aG docker $USER
 
 sudo apt install lshw -y
 sudo lshw -c display
-sudo lshw -c video
+#sudo lshw -c video
 sudo ubuntu-drivers devices
-sleep 5
 sudo ubuntu-drivers autoinstall
 # sudo apt install nvidia-driver-version-number
 
