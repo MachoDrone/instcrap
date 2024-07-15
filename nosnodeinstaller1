@@ -35,7 +35,7 @@ sudo usermod -aG docker $USER
 echo wget https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2 > c.sh
 chmod +x c.sh
 
-echo NOW TYPE: ./c.sh [enter]
+echo TO CONTINUE THE INSTALLATION TYPE: ./c.sh
 # ******** work in script?? *********
 su - $USER
 # su - $USER (this works fine)
