@@ -2,7 +2,7 @@
 ## start with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2 | sudo bash
 groups
 
-sudo usermod -aG docker $USER
+sudo usermod -aG docker md
 # ****************************************** END OF $SUDO_USER??
 
 #docker
