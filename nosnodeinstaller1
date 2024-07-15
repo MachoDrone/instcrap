@@ -53,22 +53,6 @@ sudo ubuntu-drivers autoinstall
 # sudo apt install nvidia-driver-version-number
 
 # Run this shutdown reboot and continue at the next comment
-MARKER_FILE="/tmp/reboot_marker"
-PROFILE_FILE="$HOME/.profile"
-PROFILE_BACKUP="$HOME/.profile.bak"
-
-if [ ! -f "$MARKER_FILE" ]; then
-    echo "hello world"
-
-    # Create the marker file to indicate the script has run up to the reboot
-    touch "$MARKER_FILE"
-
-    # Backup the current .profile
-    cp "$PROFILE_FILE" "$PROFILE_BACKUP"
-
-    # Add command to .profile to continue the script after reboot
-    echo "/path/to/your/script.sh" >> "$PROFILE_FILE"
-
 echo -------------------------------
 echo rebooting system in 10 seconds
 echo -------------------------------
