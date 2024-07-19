@@ -22,7 +22,7 @@ green_echo .
 green_echo .
 sleep 1
 
-read -p "Enter the username: " username
+sudo read -p "Enter the username: " username
 
 green_echo 'sudo apt update -y'
 sudo apt update -y
