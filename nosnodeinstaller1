@@ -79,7 +79,7 @@ su - $USER -c "
 green_echo() {
     echo -e "\033[0;32m$1\033[0m"
 }
-wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
+## wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
 
 
 # exit user
