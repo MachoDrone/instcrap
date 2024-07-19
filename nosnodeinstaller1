@@ -75,10 +75,12 @@ sudo usermod -aG docker $USER
 green_echo 'su - $USER'
 groups
 su - md -c "
+echo '****** groups ******'
 groups
 # Put commands here
 echo '****** continue to 2nd session ******'
 # wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
+echo '****** groups ******'
 groups
 
 sudo usermod -aG docker $USER
