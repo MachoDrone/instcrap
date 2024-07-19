@@ -75,11 +75,6 @@ sudo usermod -aG docker $USER
 green_echo 'su - $USER'
 su - $USER -c "
 # Put commands here
-# Function to echo in green
-green_echo() {
-    echo -e '\033[0;32m$1\033[0m'
-}
-green_echo 'continue 2nd session'
 wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
 
 
