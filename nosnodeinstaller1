@@ -1,5 +1,5 @@
 #!/bin/sh
-# start with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller1 | sudo bash
+# start with:  wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller1| sudo bash
 
 clear
 lsb_release -a
