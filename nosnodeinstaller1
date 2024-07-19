@@ -45,7 +45,7 @@ apt-cache policy docker-ce
 green_echo 'sudo apt install docker-ce -y'
 sudo apt install docker-ce -y
 
-green_echo 'sudo systemctl status docker > statusdocker.tmp'
+green_echo 'sudo systemctl status docker'
 sudo systemctl status docker > statusdocker.tmp
 cat statusdocker.tmp
 rm statusdocker.tmp
