@@ -2,6 +2,11 @@
 
 #run with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/instcrap/main/nosnodeinstaller3 | sudo bash
 
+# Function to echo in green
+green_echo() {
+    echo -e "\033[0;32m$1\033[0m"
+}
+
 # Continue the script here after reboot
 
 green_echo 'sudo lshw -c display'
