@@ -72,8 +72,8 @@ sudo usermod -aG docker $USER
 # note su - $USER (this works fine) vs sudo su - $USER (doesn't work right? "input device is not a tty")
 
 # Switch to the user and execute commands
-green_echo 'sudo su - $USER'
-sudo su - $USER -c "
+green_echo 'su - $USER'
+su - $USER -c "
 groups
 # Put commands here
 echo '****** continue to 2nd session ******'
