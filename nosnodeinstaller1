@@ -73,7 +73,7 @@ sudo usermod -aG docker $USER
 
 # Switch to the user and execute commands
 green_echo 'su - $USER'
-su - &USER -c "
+su - $USER -c "
 # Put commands here
 # Function to echo in green
 green_echo() {
