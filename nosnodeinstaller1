@@ -75,11 +75,7 @@ sudo usermod -aG docker $USER
 green_echo 'su - $USER'
 su - $USER -c "
 # Put commands here
-# Function to echo in green
-green_echo() {
-    echo -e "\033[0;32m$1\033[0m"
-}
-green_echo 'continue to 2nd session'
+echo '****** continue to 2nd session ******'
 # wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
 groups
 
@@ -106,13 +102,18 @@ sudo usermod -aG docker $USER
 
 
 echo ***************************************
+echo ****** sudo apt install lshw -y ******
 sudo apt install lshw -y
+echo ****** sudo lshw -c display ******
 sudo lshw -c display
 # sudo lshw -c video
+echo ****** sudo ubuntu-drivers devices ******
 sudo ubuntu-drivers devices
-sudo ubuntu-drivers autoinstall && echo TEST MESSAGE && sleep 5
+echo ****** sudo ubuntu-drivers autoinstall ******
+sudo ubuntu-drivers autoinstall
 
 "
+
 # Commands after switching from user
 green_echo 'Back to original user'
 # ***********************************
