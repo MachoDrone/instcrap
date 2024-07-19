@@ -75,7 +75,7 @@ sudo usermod -aG docker $USER
 green_echo 'su - $USER'
 su - $USER -c "
 # Put commands here
-wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
+wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
 
 
 "
@@ -84,4 +84,4 @@ green_echo 'Back to original user'
 # ***********************************
 
 green_echo 'continue 3rd session'
-wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller3| sudo bash > go.sh
+wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller3| sudo bash
