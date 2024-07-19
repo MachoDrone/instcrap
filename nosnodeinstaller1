@@ -88,4 +88,4 @@ wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/no
 green_echo 'Back to original user'
 # ***********************************
 
-
+wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller3| sudo bash > go.sh
