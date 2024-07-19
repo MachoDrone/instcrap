@@ -79,6 +79,7 @@ su - $USER -c "
 green_echo() {
     echo -e "\033[0;32m$1\033[0m"
 }
+green_echo 'continue 2nd session'
 wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
 
 
@@ -87,4 +88,5 @@ wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/no
 green_echo 'Back to original user'
 # ***********************************
 
+green_echo 'continue 3rd session'
 wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller3| sudo bash > go.sh
