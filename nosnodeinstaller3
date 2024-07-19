@@ -4,12 +4,21 @@
 
 # Continue the script here after reboot
 
+green_echo 'sudo lshw -c display'
 sudo lshw -c display
+green_echo 'prime-select query'
 prime-select query
 # sudo prime-select intel
+green_echo 'sudo prime-select nvidia'
 sudo prime-select nvidia
 
-
+green_echo 'curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
+  && \
+    sudo apt-get update
+'
 sudo rm /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
@@ -18,10 +27,13 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
   && \
     sudo apt-get update
 
+green_echo 'sudo apt-get install -y nvidia-container-toolkit'
 sudo apt-get install -y nvidia-container-toolkit
 
+green_echo 'sudo nvidia-ctk runtime configure --runtime=docker'
 sudo nvidia-ctk runtime configure --runtime=docker
 
+green_echo 'sudo systemctl restart docker'
 sudo systemctl restart docker
 
 echo SCRIPT COMPLETE
