@@ -66,13 +66,26 @@ sudo usermod -aG docker $USER
 # echo .
 # echo .
 # echo .
+
+
 # ******** work in script?? *********
+# note su - $USER (this works fine) vs sudo su - $USER (doesn't work right? "input device is not a tty")
 
+# Switch to the user and execute commands
 green_echo 'su - $USER'
-su - $USER
+su - &USER -c "
+# Put commands here
+# Function to echo in green
+green_echo() {
+    echo -e "\033[0;32m$1\033[0m"
+}
+wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
 
-# su - $USER (this works fine)
-# vs sudo su - $USER (doesn't work right? "input device is not a tty")
+
+# exit user
+"
+# Commands after switching from user
+green_echo 'Back to original user'
 # ***********************************
 
-wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
+
