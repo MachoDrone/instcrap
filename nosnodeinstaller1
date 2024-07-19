@@ -73,8 +73,11 @@ sudo usermod -aG docker $USER
 
 # Switch to the user and execute commands
 green_echo 'su - $USER'
+who am i
 su - $USER -c "
+who am i
 groups
+who am i
 # Put commands here
 echo '****** continue to 2nd session ******'
 # wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
