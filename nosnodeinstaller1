@@ -1,52 +1,78 @@
 #!/bin/sh
 # start with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller1 | sudo bash
 
-
 clear
-echo .
 lsb_release -a
-echo .
-echo Please observe if you are using Ubuntu 22.04 or higher
-echo .
+
+# Function to echo in green
+green_echo() {
+    echo -e "\033[0;32m$1\033[0m"
+}
+
+green_echo '                  /\\'
+green_echo '                 /  \\'
+green_echo '                /    \\'
+green_echo '               --    --'
+green_echo '                 |  |'
+green_echo '                 |__|'
+green_echo 'Please observe if you are using Ubuntu 22.04 or higher'
+lsb_release -a
+green_echo .
+green_echo .
+green_echo .
 sleep 1
+
+green_echo 'sudo apt update -y'
 sudo apt update -y
 
+green_echo 'sudo apt install apt-transport-https ca-certificates curl software-properties-common -y'
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 
+green_echo 'sudo rm /usr/share/keyrings/docker-archive-keyring.gpg'
 sudo rm /usr/share/keyrings/docker-archive-keyring.gpg
+green_echo 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
+green_echo 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null'
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
+green_echo 'sudo apt update -y'
 sudo apt update -y
 
+green_echo 'apt-cache policy docker-ce'
 apt-cache policy docker-ce
 
+green_echo 'sudo apt install docker-ce -y'
 sudo apt install docker-ce -y
 
+green_echo 'sudo systemctl status docker > statusdocker.tmp'
 sudo systemctl status docker > statusdocker.tmp
 cat statusdocker.tmp
 rm statusdocker.tmp
 
-
-# ****verify $SUDO_USER function************
+green_echo 'sudo usermod -aG docker $USER'
 sudo usermod -aG docker $USER
 
-echo wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
-chmod +x go.sh
-echo .
-echo .
-echo .
-echo .
-echo "TO CONTINUE THE INSTALLATION TYPE: su - yourusername"
-echo "e.g.: su - james"
-echo "THEN TYPE:  ./go.sh"
-echo .
-echo .
-echo .
-echo .
+# wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
+# chmod +x go.sh
+# echo .
+# echo .
+# echo .
+# echo .
+# echo "TO CONTINUE THE INSTALLATION TYPE: su - yourusername"
+# echo "e.g.: su - james"
+# echo "THEN TYPE:  ./go.sh"
+# echo .
+# echo .
+# echo .
+# echo .
 # ******** work in script?? *********
-#su - $USER
+
+green_echo 'su - $USER'
+su - $USER
+
 # su - $USER (this works fine)
-# vs sudo su - $USER (doesn't work right? "input divice is not a tty")
-# ******************************************
+# vs sudo su - $USER (doesn't work right? "input device is not a tty")
+# ***********************************
+
+wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
