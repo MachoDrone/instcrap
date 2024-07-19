@@ -20,7 +20,7 @@ lsb_release -a
 green_echo .
 green_echo .
 green_echo .
-sleep 1
+sleep 3
 
 green_echo 'sudo apt update -y'
 sudo apt update -y
