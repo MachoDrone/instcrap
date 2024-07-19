@@ -33,7 +33,7 @@ sudo usermod -aG docker $USER
 
 
 echo ***************************************
-green_echo 'sudo apt install lshw -y
+green_echo 'sudo apt install lshw -y'
 sudo apt install lshw -y
 green_echo 'sudo lshw -c display'
 sudo lshw -c display
