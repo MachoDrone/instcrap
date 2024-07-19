@@ -75,9 +75,42 @@ sudo usermod -aG docker $USER
 green_echo 'su - $USER'
 su - $USER -c "
 # Put commands here
+# Function to echo in green
+green_echo() {
+    echo -e "\033[0;32m$1\033[0m"
+}
 green_echo 'continue to 2nd session'
-wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
+# wget --no-check-certificate --no-cache --no-cookies -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash
+groups
 
+sudo usermod -aG docker $USER
+# ****************************************** END OF $SUDO_USER??
+
+#docker
+#docker info
+#docker images
+
+## sudo groupadd docker
+## sudo usermod -aG docker $USER
+
+##newgrp docker
+##docker run hello-world
+# sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+# sudo chmod g+rwx "$HOME/.docker" -R
+
+# sudo systemctl enable docker.service
+# sudo systemctl enable containerd.service
+
+# sudo systemctl disable docker.service
+# sudo systemctl disable containerd.service
+
+
+echo ***************************************
+sudo apt install lshw -y
+sudo lshw -c display
+# sudo lshw -c video
+sudo ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall && echo TEST MESSAGE && sleep 5
 
 "
 # Commands after switching from user
