@@ -1,7 +1,15 @@
 #!/bin/sh
 ## start with:  wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2 | sudo bash
+
+# Function to echo in green
+green_echo() {
+    echo -e "\033[0;32m$1\033[0m"
+}
+
+green_echo 'groups'
 groups
 
+green_echo 'sudo usermod -aG docker $USER'
 sudo usermod -aG docker $USER
 # ****************************************** END OF $SUDO_USER??
 
@@ -25,11 +33,15 @@ sudo usermod -aG docker $USER
 
 
 echo ***************************************
+green_echo 'sudo apt install lshw -y
 sudo apt install lshw -y
+green_echo 'sudo lshw -c display'
 sudo lshw -c display
 # sudo lshw -c video
+green_echo 'sudo ubuntu-drivers devices'
 sudo ubuntu-drivers devices
-sudo ubuntu-drivers autoinstall && echo TEST MESSAGE && sleep 5
+green_echo 'sudo ubuntu-drivers autoinstall'
+sudo ubuntu-drivers autoinstall
 # sudo apt install nvidia-driver-version-number
 
 # Run this shutdown reboot and continue at the next comment
@@ -43,4 +55,4 @@ sudo ubuntu-drivers autoinstall && echo TEST MESSAGE && sleep 5
 
 #printf '\n # Launch Nosana node start script\n if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then\n     chvt 2\n fi\n' >> .profile
 #printf '\n # Launch Nosana node start script\n if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty2 ]]; then\n     wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller1a | sudo bash\n fi\n' >> .profile
-echo END OF SCRIPT
+green_echo 'END OF THIS SUB-SCRIPT'
