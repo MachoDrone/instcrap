@@ -23,6 +23,7 @@ green_echo .
 green_echo .
 sleep 1
 
+echo A REBOOT WILL HAPPEN AT THE END OF THIS INSTALLER. PRESS CTRL-C TO QUIT
 read -p "Enter your Ubuntu login username for this PC: " username
 
 sudo rm -r -f .nosana
@@ -140,6 +141,8 @@ sudo nvidia-ctk runtime configure --runtime=docker
 
 sudo systemctl restart docker
 
-echo ********************************
-echo "complete, now do a sudo reboot"
-echo ********************************
+sudo reboot
+
+#echo ********************************
+#echo "complete, now do a sudo reboot"
+#echo ********************************
