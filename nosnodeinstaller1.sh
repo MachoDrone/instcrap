@@ -27,7 +27,7 @@ read -p "Enter your Ubuntu login username for this PC: " username
 
 sudo rm -r -f .nosana
 mkdir /home/$username/.nosana
-printf '\nDelete this line and paste key here, or do it later: nano ~/.nosana/nosana_key.json\n' > /home/$username/nosana_key.json
+printf '\nDelete this line and paste key here or do it later with nano ~/.nosana/nosana_key.json\n' > /home/$username/nosana_key.json
 sudo nano /home/$username/.nosana/nosana_key.json
 
 sudo apt install lshw -y
