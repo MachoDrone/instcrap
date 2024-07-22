@@ -54,7 +54,7 @@ cat statusdocker.tmp
 rm statusdocker.tmp
 
 green_echo 'sudo usermod -aG docker $USER'
-sudo usermod -aG docker $USER
+sudo usermod -aG docker $username
 
 # wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
 # chmod +x go.sh
@@ -86,7 +86,7 @@ echo '****** continue to 2nd session ******'
 echo '****** groups ******'
 groups
 
-sudo usermod -aG docker $USER
+## sudo usermod -aG docker $USER
 # ****************************************** END OF $SUDO_USER??
 
 echo ***************************************
