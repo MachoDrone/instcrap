@@ -23,7 +23,7 @@ green_echo .
 green_echo .
 sleep 1
 
-read -p "Enter your login username for this node: " username
+read -p "Enter your Ubuntu login username for this PC: " username
 
 sudo rm -r -f .nosana
 mkdir /home/$username/.nosana
