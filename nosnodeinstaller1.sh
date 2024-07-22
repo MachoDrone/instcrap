@@ -26,6 +26,12 @@ sleep 1
 echo A REBOOT WILL HAPPEN AT THE END OF THIS INSTALLER. PRESS CTRL-C TO QUIT
 read -p "Enter your Ubuntu login username for this PC: " username
 
+
+# Create startnode.sh
+printf '\n#!/bin/sh\nbash <(wget -qO- https://nosana.io/testgrid.sh)\necho ------------------------------------------\necho 10 sec pause for ctrl-c option\necho ------------------------------------------\nsleep 10\n./startnode.sh\n' > /home/$SUDO_USER/startnode.sh
+chmod +x /home/$username/startnode.sh
+
+
 sudo rm -r -f .nosana
 mkdir /home/$username/.nosana
 printf 'Delete this line and paste key here or do it later with nano ~/.nosana/nosana_key.json\n' > /home/$username/.nosana/nosana_key.json
