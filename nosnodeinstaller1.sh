@@ -64,7 +64,7 @@ sudo systemctl status docker > statusdocker.tmp
 cat statusdocker.tmp
 rm statusdocker.tmp
 
-green_echo 'sudo usermod -aG docker $USER'
+green_echo 'sudo usermod -aG docker $username'
 sudo usermod -aG docker $username
 
 # wget -qO - https://raw.githubusercontent.com/MachoDrone/nosnodeinstaller/main/nosnodeinstaller2| sudo bash > go.sh
