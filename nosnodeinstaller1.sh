@@ -135,7 +135,7 @@ sudo nvidia-ctk runtime configure --runtime=docker
 
 sudo systemctl restart docker
 
-sudo mkdir /home/$USER/.nosana
+mkdir /home/$USER/.nosana
 printf '\nDelete this line and paste key here, or do it later: nano ~/.nosana/nosana_key.json\n' > /home/$USER/nosana_key.json
 sudo nano /home/$USER/.nosana/nosana_key.json
 
