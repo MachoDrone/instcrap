@@ -26,6 +26,10 @@ sleep 1
 echo A REBOOT WILL HAPPEN AT THE END OF THIS INSTALLER. PRESS CTRL-C TO QUIT
 read -p "Enter your Ubuntu login username for this PC: " username
 
+sudo apt update -y
+sudo apt install nano -y
+sudo apt install openssh-server -y
+
 
 # Create startnode.sh
 printf '\n#!/bin/sh\nbash <(wget -qO- https://nosana.io/testgrid.sh)\necho ------------------------------------------\necho 10 sec pause for ctrl-c option\necho ------------------------------------------\nsleep 10\n./startnode.sh\n' > /home/$SUDO_USER/startnode.sh
@@ -37,6 +41,7 @@ mkdir /home/$username/.nosana
 printf 'Delete this line and paste key here or do it later with nano ~/.nosana/nosana_key.json\n' > /home/$username/.nosana/nosana_key.json
 sudo nano /home/$username/.nosana/nosana_key.json
 
+green_echo 'installing NVIDIA drivers'
 sudo apt install lshw -y
 sudo lshw -c display
 # sudo lshw -c video
@@ -107,20 +112,20 @@ groups
 ## sudo usermod -aG docker $USER
 # ****************************************** END OF $SUDO_USER??
 
-echo ***************************************
-echo ****** sudo apt install lshw -y ******
-sudo apt install lshw -y
-echo ****** sudo lshw -c display ******
-sudo lshw -c display
+#echo ***************************************
+#echo ****** sudo apt install lshw -y ******
+# sudo apt install lshw -y
+# echo ****** sudo lshw -c display ******
+#sudo lshw -c display
 # sudo lshw -c video
 
-echo ****** sudo ubuntu-drivers devices ******
-sudo ubuntu-drivers devices
+# echo ****** sudo ubuntu-drivers devices ******
+# sudo ubuntu-drivers devices
 
-echo ****** sudo ubuntu-drivers autoinstall ******
-sudo ubuntu-drivers autoinstall
+# echo ****** sudo ubuntu-drivers autoinstall ******
+# sudo ubuntu-drivers autoinstall
 
-# complete su - usErnAmE
+# complete su - {username}
 "
 
 # Commands after switching from user
