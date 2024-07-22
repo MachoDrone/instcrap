@@ -23,7 +23,7 @@ green_echo .
 green_echo .
 sleep 1
 
-read -p "Enter the username: " username
+read -p "Enter your login username for this node: " username
 
 sudo apt install lshw -y
 sudo lshw -c display
@@ -135,9 +135,9 @@ sudo nvidia-ctk runtime configure --runtime=docker
 
 sudo systemctl restart docker
 
-mkdir /home/$USER/.nosana
-printf '\nDelete this line and paste key here, or do it later: nano ~/.nosana/nosana_key.json\n' > /home/$USER/nosana_key.json
-sudo nano /home/$USER/.nosana/nosana_key.json
+mkdir /home/$username/.nosana
+printf '\nDelete this line and paste key here, or do it later: nano ~/.nosana/nosana_key.json\n' > /home/$username/nosana_key.json
+sudo nano /home/$username/.nosana/nosana_key.json
 
 echo ********************************
 echo "complete, now do a sudo reboot"
