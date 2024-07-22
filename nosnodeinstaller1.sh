@@ -25,6 +25,12 @@ sleep 1
 
 read -p "Enter the username: " username
 
+sudo apt install lshw -y
+sudo lshw -c display
+# sudo lshw -c video
+sudo ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+
 green_echo 'sudo apt update -y'
 sudo apt update -y
 
